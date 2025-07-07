@@ -1,12 +1,10 @@
-version: "3.8"
-
 services:
   mongodb:
     image: mongo:6
     container_name: aethersync_mongo
     restart: always
     ports:
-      - "27017:27017"  # LOCALHOST ONLY ATM
+      - "27017:27017"
     volumes:
       - mongo_data:/data/db
 
