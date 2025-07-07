@@ -5,17 +5,16 @@ import logging
 import tempfile
 import datetime
 import requests
+import json
 from pymongo import MongoClient
 from logging.handlers import RotatingFileHandler
 
-# === CONFIG ===
-BASE_URL = "https://www.sec.gov/Archives/edgar/daily-index"
-HEADERS = {"User-Agent": "AetherSyncBot/1.0 (mailto:jeremy@aethersync.io)"}
-TARGET_FORMS = {"10-K", "10-Q", "13F", "13D", "4"}
-MONGO_URI = "mongodb://mongodb:27017"  # or 'localhost' outside Docker
-DB_NAME = "edgar"
-COLLECTION_NAME = "filings"
-LOG_FILE = "edgar_ingest.log"
+with open("config.json") as f:
+    config = json.load(f)
+
+MONGO_URI = config["mongo_uri"]
+TARGET_FORMS = set(config["target_forms"])
+
 
 # === LOGGING ===
 logger = logging.getLogger("aethersync_edgar_ingest")
