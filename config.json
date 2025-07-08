@@ -1,7 +1,7 @@
 {
   "base_url": "https://www.sec.gov/Archives/edgar/daily-index",
   "headers": {
-    "User-Agent": "AetherSyncBot/1.0 (mailto:jeremy@aethersync.io)"
+    "User-Agent": "AetherSyncBot/1.0 (mailto:admin@aethersync.io)"
   },
   "target_forms": ["10-K", "10-Q", "13F", "13D", "4"],
   "mongo_uri": "mongodb://mongodb:27017",
