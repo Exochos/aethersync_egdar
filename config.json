@@ -5,7 +5,7 @@
   },
   "target_forms": ["10-K", "10-Q", "13F", "13D", "4"],
   "mongo_uri": "mongodb://mongodb:27017",
-  "db_name": "edgar",
+  "db_name": "edgar_sec",
   "collection_name": "filings",
   "log_file": "edgar_ingest.log"
 }
